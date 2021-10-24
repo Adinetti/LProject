@@ -22,7 +22,7 @@ namespace LProject {
         private void AddDictionary(Dictionary dict) {
             for (int t = 0; t < dict.texts.Length; t++) {
                 var text = dict.texts[t];
-                var original = text.originalText;
+                var original = text.originalText.ToLowerInvariant();
                 if (_textData.ContainsKey(original) == false) {
                     _textData.Add(original, new List<Translation>());
                 }
@@ -33,8 +33,9 @@ namespace LProject {
         }
 
         public string GetTranslation(string text, Language language) {
-            if (_textData.ContainsKey(text)) {
-                var translations = _textData[text];
+            var key = text.ToLowerInvariant();
+            if (_textData.ContainsKey(key)) {
+                var translations = _textData[key];
                 for (int i = 0; i < translations.Count; i++) {
                     var translation = translations[i];
                     if (translation.language == language) {
