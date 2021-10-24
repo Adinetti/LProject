@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9870cf35d29187d4abc24584125e646a, type: 3}
   m_Name: Localizations
   m_EditorClassIdentifier: 
-  texts: []
+  dictionaries:
+  - {fileID: 11400000, guid: a725a0ad828bf814183b931747089d06, type: 2}

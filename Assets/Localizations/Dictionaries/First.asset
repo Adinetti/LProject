@@ -12,4 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18b6a2335142d0149a50f9d2db4d7cd1, type: 3}
   m_Name: First
   m_EditorClassIdentifier: 
-  texts: []
+  texts:
+  - originalText: Sasha
+    translations:
+    - text: "\u0421\u0430\u0448\u0430"
+      language: 1
+  - originalText: Masha
+    translations:
+    - text: "\u041C\u0430\u0448\u0430"
+      language: 1
