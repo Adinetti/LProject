@@ -16,7 +16,7 @@ namespace LProject {
             for (int i = 0; i < _localization.dictionaries.Length; i++) {
                 var dict = _localization.dictionaries[i];
                 AddDictionary(dict);
-            }
+            } 
         }
 
         private void AddDictionary(Dictionary dict) {
