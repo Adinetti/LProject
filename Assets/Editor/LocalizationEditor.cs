@@ -7,7 +7,7 @@ using UnityEditor;
 using System.IO;
 using System.Text;
 using LProject;
-using LProject.Text;
+using LProject.Dictionaries; 
 
 namespace LProjectEditor {
     [CustomEditor(typeof(Localization))]
@@ -29,29 +29,13 @@ namespace LProjectEditor {
             var path = AssetDatabase.GetAssetPath(_localization).Split('.')[0];
             var pathToJson = $"./{path}.json";
             var data = new StringBuilder();
-            for (int i = 0; i < _localization.texts.Length; i++) {
-                var text = _localization.texts[i];
-                var json = JsonUtility.ToJson(text);
+            for (int i = 0; i < _localization.dictionaries.Length; i++) {
+                var dict = _localization.dictionaries[i];
+                var json = JsonUtility.ToJson(dict);
                 data.AppendLine(json);
             }
             File.WriteAllText(pathToJson, data.ToString());
             Debug.Log("Localization to save");
-        }
-
-        private void LoadFromFile() {
-            var pathToJson = $"{Application.dataPath}/{_localization.name}.json";
-            var message = $"File in: \"{pathToJson}\" don`t exists.";
-            if (File.Exists(pathToJson)) {
-                var jsons = File.ReadAllLines(pathToJson);
-                var texts = new List<TextData>();
-                for (int i = 0; i < jsons.Length; i++) {
-                    var text =  TextData.CreateFromJson(jsons[i], $"text_{i}");
-                    texts.Add(text);
-                }
-                _localization.texts = texts.ToArray();
-                message = "Done.";
-            }
-            Debug.Log(message);
         }
     }
 }

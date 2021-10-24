@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-namespace LProject.Text { 
+namespace LProject.Dictionaries { 
 	[System.Serializable]
 	public struct Translation   {
 		public string text;

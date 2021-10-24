@@ -9,12 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff5d1abb669645246a6a35412228f81a, type: 3}
-  m_Name: text_1
+  m_Script: {fileID: 11500000, guid: 18b6a2335142d0149a50f9d2db4d7cd1, type: 3}
+  m_Name: First
   m_EditorClassIdentifier: 
-  originalText: Text 1
-  translations:
-  - text: 1
-    language: 0
-  - text: 2
-    language: 1
+  texts: []
